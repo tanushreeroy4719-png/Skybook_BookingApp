@@ -1,0 +1,5 @@
+Repository description (paste in the "About" box on GitHub):
+Booking.com-style flight and hotel booking web app built with Java Servlets, JSP and MySQL, with Passenger, Airline and Admin roles.
+
+Topics (add under About -> Topics):
+java, jsp, servlets, mysql, maven, tomcat, booking-system, flight-booking, hotel-booking, student-project, bootstrap

@@ -1,0 +1,6 @@
+target/
+nbproject/private/
+*.class
+*.war
+.idea/
+.DS_Store

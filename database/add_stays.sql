@@ -1,0 +1,47 @@
+-- SkyBook Stays (hotels) module. Run after the other SQL files.
+USE `skybook`;
+
+CREATE TABLE IF NOT EXISTS `hotels` (`HotelID` INT AUTO_INCREMENT PRIMARY KEY,`HotelName` VARCHAR(100) NOT NULL,`City` VARCHAR(50) NOT NULL,`Address` VARCHAR(150),`Stars` TINYINT NOT NULL,`Rating` DECIMAL(3,1) NOT NULL,`PricePerNight` DECIMAL(10,2) NOT NULL,`Amenities` VARCHAR(200),`BreakfastIncluded` TINYINT(1) DEFAULT 0,`FreeCancellation` TINYINT(1) DEFAULT 1,`Description` VARCHAR(255)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS `hotel_bookings` (`StayID` INT AUTO_INCREMENT PRIMARY KEY,`HotelID` INT NOT NULL,`PassengerID` INT NOT NULL,`CheckIn` DATE NOT NULL,`CheckOut` DATE NOT NULL,`Guests` INT NOT NULL,`Rooms` INT NOT NULL,`TotalPrice` DECIMAL(10,2) NOT NULL,`Status` VARCHAR(20) DEFAULT 'Confirmed',`BookedOn` TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `hotels` (HotelName,City,Address,Stars,Rating,PricePerNight,Amenities,BreakfastIncluded,FreeCancellation,Description) VALUES
+('Skyline Suites Ahmedabad','Ahmedabad','69 Main Road, Ahmedabad',3,7.4,1800.00,'Free WiFi, Rooftop bar, Gym',0,0,'Comfortable stay in the heart of Ahmedabad, close to the airport and city attractions.'),
+('The Riverside Residency Ahmedabad','Ahmedabad','54 Main Road, Ahmedabad',3,7.4,1800.00,'Free WiFi, Pool, Gym',1,0,'Comfortable stay in the heart of Ahmedabad, close to the airport and city attractions.'),
+('Heritage Haveli Ahmedabad','Ahmedabad','81 Main Road, Ahmedabad',3,8.6,2800.00,'Free WiFi, Pool, Gym',1,0,'Comfortable stay in the heart of Ahmedabad, close to the airport and city attractions.'),
+('Royal Orchid Inn Ahmedabad','Ahmedabad','18 Main Road, Ahmedabad',4,7.8,3400.00,'Free WiFi, Spa, Restaurant',0,1,'Comfortable stay in the heart of Ahmedabad, close to the airport and city attractions.'),
+('Lotus Boutique Stay Mumbai','Mumbai','71 Main Road, Mumbai',4,8.8,4100.00,'Free WiFi, Rooftop bar, Gym',0,0,'Comfortable stay in the heart of Mumbai, close to the airport and city attractions.'),
+('The Riverside Residency Mumbai','Mumbai','55 Main Road, Mumbai',5,8.9,9600.00,'Free WiFi, Parking, Restaurant',1,1,'Comfortable stay in the heart of Mumbai, close to the airport and city attractions.'),
+('Grand Palace Hotel Mumbai','Mumbai','24 Main Road, Mumbai',4,8.7,3800.00,'Free WiFi, Spa, Restaurant',0,1,'Comfortable stay in the heart of Mumbai, close to the airport and city attractions.'),
+('Skyline Suites Mumbai','Mumbai','94 Main Road, Mumbai',5,8.2,10500.00,'Free WiFi, Rooftop bar, Gym',0,0,'Comfortable stay in the heart of Mumbai, close to the airport and city attractions.'),
+('Lotus Boutique Stay New Delhi','New Delhi','54 Main Road, New Delhi',4,7.3,5300.00,'Free WiFi, Pool, Gym',1,1,'Comfortable stay in the heart of New Delhi, close to the airport and city attractions.'),
+('Heritage Haveli New Delhi','New Delhi','75 Main Road, New Delhi',4,9.0,4600.00,'Free WiFi, Pool, Gym',0,1,'Comfortable stay in the heart of New Delhi, close to the airport and city attractions.'),
+('The Riverside Residency New Delhi','New Delhi','9 Main Road, New Delhi',5,7.3,9700.00,'Free WiFi, Airport shuttle',1,1,'Comfortable stay in the heart of New Delhi, close to the airport and city attractions.'),
+('Royal Orchid Inn New Delhi','New Delhi','45 Main Road, New Delhi',5,7.2,10500.00,'Free WiFi, Parking, Restaurant',1,0,'Comfortable stay in the heart of New Delhi, close to the airport and city attractions.'),
+('Lotus Boutique Stay Bengaluru','Bengaluru','17 Main Road, Bengaluru',4,8.8,4900.00,'Free WiFi, Parking, Restaurant',1,1,'Comfortable stay in the heart of Bengaluru, close to the airport and city attractions.'),
+('Grand Palace Hotel Bengaluru','Bengaluru','52 Main Road, Bengaluru',3,8.4,1900.00,'Free WiFi, Spa, Restaurant',1,1,'Comfortable stay in the heart of Bengaluru, close to the airport and city attractions.'),
+('Heritage Haveli Bengaluru','Bengaluru','88 Main Road, Bengaluru',5,9.1,10900.00,'Free WiFi, Spa, Restaurant',0,0,'Comfortable stay in the heart of Bengaluru, close to the airport and city attractions.'),
+('Royal Orchid Inn Bengaluru','Bengaluru','85 Main Road, Bengaluru',4,7.7,3600.00,'Free WiFi, Parking, Restaurant',0,1,'Comfortable stay in the heart of Bengaluru, close to the airport and city attractions.'),
+('Skyline Suites Hyderabad','Hyderabad','41 Main Road, Hyderabad',4,9.3,4600.00,'Free WiFi, Rooftop bar, Gym',0,1,'Comfortable stay in the heart of Hyderabad, close to the airport and city attractions.'),
+('Grand Palace Hotel Hyderabad','Hyderabad','51 Main Road, Hyderabad',5,7.4,8400.00,'Free WiFi, Parking, Restaurant',0,0,'Comfortable stay in the heart of Hyderabad, close to the airport and city attractions.'),
+('The Riverside Residency Hyderabad','Hyderabad','57 Main Road, Hyderabad',3,7.6,2800.00,'Free WiFi, Airport shuttle',0,0,'Comfortable stay in the heart of Hyderabad, close to the airport and city attractions.'),
+('Heritage Haveli Hyderabad','Hyderabad','69 Main Road, Hyderabad',3,7.4,2300.00,'Free WiFi, Airport shuttle',0,0,'Comfortable stay in the heart of Hyderabad, close to the airport and city attractions.'),
+('The Riverside Residency Chennai','Chennai','78 Main Road, Chennai',4,8.0,5300.00,'Free WiFi, Pool, Gym',0,1,'Comfortable stay in the heart of Chennai, close to the airport and city attractions.'),
+('Lotus Boutique Stay Chennai','Chennai','40 Main Road, Chennai',5,7.4,8800.00,'Free WiFi, Pool, Gym',1,1,'Comfortable stay in the heart of Chennai, close to the airport and city attractions.'),
+('Heritage Haveli Chennai','Chennai','21 Main Road, Chennai',5,8.3,10300.00,'Free WiFi, Spa, Restaurant',1,0,'Comfortable stay in the heart of Chennai, close to the airport and city attractions.'),
+('Grand Palace Hotel Chennai','Chennai','39 Main Road, Chennai',3,9.4,2500.00,'Free WiFi, Pool, Gym',1,1,'Comfortable stay in the heart of Chennai, close to the airport and city attractions.'),
+('The Riverside Residency Kolkata','Kolkata','79 Main Road, Kolkata',4,9.0,4600.00,'Free WiFi, Spa, Restaurant',0,1,'Comfortable stay in the heart of Kolkata, close to the airport and city attractions.'),
+('Skyline Suites Kolkata','Kolkata','64 Main Road, Kolkata',4,8.0,3700.00,'Free WiFi, Pool, Gym',0,1,'Comfortable stay in the heart of Kolkata, close to the airport and city attractions.'),
+('Royal Orchid Inn Kolkata','Kolkata','89 Main Road, Kolkata',5,8.5,7900.00,'Free WiFi, Airport shuttle',1,1,'Comfortable stay in the heart of Kolkata, close to the airport and city attractions.'),
+('Lotus Boutique Stay Kolkata','Kolkata','14 Main Road, Kolkata',4,7.7,3500.00,'Free WiFi, Spa, Restaurant',1,0,'Comfortable stay in the heart of Kolkata, close to the airport and city attractions.'),
+('Heritage Haveli Goa','Goa','11 Main Road, Goa',4,9.0,5000.00,'Free WiFi, Pool, Gym',1,0,'Comfortable stay in the heart of Goa, close to the airport and city attractions.'),
+('Lotus Boutique Stay Goa','Goa','56 Main Road, Goa',5,8.9,10500.00,'Free WiFi, Airport shuttle',0,1,'Comfortable stay in the heart of Goa, close to the airport and city attractions.'),
+('Grand Palace Hotel Goa','Goa','11 Main Road, Goa',5,8.8,8500.00,'Free WiFi, Spa, Restaurant',0,0,'Comfortable stay in the heart of Goa, close to the airport and city attractions.'),
+('The Riverside Residency Goa','Goa','60 Main Road, Goa',4,9.0,4600.00,'Free WiFi, Spa, Restaurant',1,1,'Comfortable stay in the heart of Goa, close to the airport and city attractions.'),
+('The Riverside Residency Jaipur','Jaipur','93 Main Road, Jaipur',3,8.6,2600.00,'Free WiFi, Rooftop bar, Gym',0,1,'Comfortable stay in the heart of Jaipur, close to the airport and city attractions.'),
+('Lotus Boutique Stay Jaipur','Jaipur','28 Main Road, Jaipur',4,7.3,5000.00,'Free WiFi, Spa, Restaurant',1,0,'Comfortable stay in the heart of Jaipur, close to the airport and city attractions.'),
+('Royal Orchid Inn Jaipur','Jaipur','54 Main Road, Jaipur',4,9.0,3900.00,'Free WiFi, Pool, Gym',1,1,'Comfortable stay in the heart of Jaipur, close to the airport and city attractions.'),
+('Grand Palace Hotel Jaipur','Jaipur','65 Main Road, Jaipur',5,7.5,10300.00,'Free WiFi, Spa, Restaurant',0,1,'Comfortable stay in the heart of Jaipur, close to the airport and city attractions.'),
+('The Riverside Residency Kochi','Kochi','80 Main Road, Kochi',4,8.8,3600.00,'Free WiFi, Rooftop bar, Gym',0,1,'Comfortable stay in the heart of Kochi, close to the airport and city attractions.'),
+('Lotus Boutique Stay Kochi','Kochi','14 Main Road, Kochi',5,9.1,10100.00,'Free WiFi, Pool, Gym',0,0,'Comfortable stay in the heart of Kochi, close to the airport and city attractions.'),
+('Grand Palace Hotel Kochi','Kochi','13 Main Road, Kochi',4,8.3,3400.00,'Free WiFi, Rooftop bar, Gym',0,0,'Comfortable stay in the heart of Kochi, close to the airport and city attractions.'),
+('Heritage Haveli Kochi','Kochi','65 Main Road, Kochi',5,8.5,8100.00,'Free WiFi, Spa, Restaurant',1,1,'Comfortable stay in the heart of Kochi, close to the airport and city attractions.');
