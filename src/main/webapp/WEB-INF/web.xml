@@ -15,6 +15,14 @@
         <session-timeout>60</session-timeout>
     </session-config>
 
+    <!-- Read every JSP as UTF-8 (fixes garbled arrows, stars and emojis) -->
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <page-encoding>UTF-8</page-encoding>
+        </jsp-property-group>
+    </jsp-config>
+
     <error-page>
         <exception-type>java.lang.Exception</exception-type>
         <location>/WEB-INF/jsp/error.jsp</location>
