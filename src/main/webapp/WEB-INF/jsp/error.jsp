@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" isErrorPage="true" %>
 <% request.setAttribute("pageTitle", "Error"); %>
 <%@ include file="common/header.jsp" %>
 
