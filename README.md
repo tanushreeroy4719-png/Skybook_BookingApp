@@ -11,10 +11,6 @@
 
 SkyBook lets passengers search and book flights and hotel stays, airlines manage their own flights, and admins manage airlines and aircraft. The interface is inspired by Booking.com and works on phones. This is a student project (Computer Engineering, 2nd semester) and is not affiliated with Booking.com.
 
-## Screenshots
-
-_Add your screenshots to a `screenshots/` folder and link them here, for example:_
-`![Home](screenshots/home.png)`
 
 ## Features
 
